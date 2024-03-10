@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/common/genTextFormField.dart';
-import 'package:todo_app/screens/signup.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class Signup extends StatefulWidget {
+  const Signup({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Signup> createState() => _SignupState();
 }
 
-class _LoginState extends State<Login> {
+class _SignupState extends State<Signup> {
   final _conUserId = TextEditingController();
   final _conPassword = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('To Do',
-        style: TextStyle(
-          color: Colors.white
-        ),),
+        title: Text('To Do'),
         backgroundColor: Colors.blue,
       ),
       body: SingleChildScrollView(
@@ -29,22 +25,28 @@ class _LoginState extends State<Login> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 50,),
+                SizedBox(height: 30,),
                 Image.asset('assets/logo.png',
                 height: 150,
                 width: 150,
                 ),
                 SizedBox(height: 10,),
-                Text('Login',
+                Text('Signup',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                   fontSize: 30.0,
                 ),),
                 SizedBox(height: 30,),
+                genTextFormFeild(_conUserId, 'User ID', Icons.person),
+                SizedBox(height: 10,),
                 genTextFormFeild(_conUserId, 'User Name', Icons.person),
                 SizedBox(height: 10,),
+                genTextFormFeild(_conUserId, 'Email', Icons.email),
+                SizedBox(height: 10,),
                 genTextFormFeild(_conPassword, 'Password', Icons.lock,isObscureText: true,),
+                SizedBox(height: 10,),
+                genTextFormFeild(_conPassword, 'Confirm Password', Icons.lock,isObscureText: true,),
                 SizedBox(height: 10,),
                 Container(
                   width: double.infinity,
@@ -58,7 +60,7 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                       onPressed: (){}, 
-                      child: Text('Login',
+                      child: Text('Signup',
                       style: TextStyle(
                         color: Colors.white
                       ),
@@ -67,18 +69,18 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Container(
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
-                          Text('Not an existing user?   ',
+                          Text('Existing user?   ',
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.bold
                           ),),
-                          Text('Click the button below to sign up',
+                          Text('Click the button below to login',
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.bold
@@ -95,8 +97,8 @@ class _LoginState extends State<Login> {
                           borderRadius: BorderRadius.circular(5.0)
                         ),
                       ),
-                      onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>Signup())), 
-                      child: Text('Signup',
+                      onPressed: ()=>Navigator.pop(context), 
+                      child: Text('Login',
                       style: TextStyle(
                         color: Colors.white
                       ),
