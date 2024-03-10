@@ -5,8 +5,10 @@ class genTextFormFeild extends StatelessWidget {
   String hintname;
   IconData icon;
   bool isObscureText;
+  TextInputType inputtype;
 
-  genTextFormFeild(this.controller, this.hintname, this.icon, {this.isObscureText = false});
+  genTextFormFeild(this.controller, this.hintname, this.icon,this.inputtype,
+      {this.isObscureText = false});
 
   @override
   Widget build(BuildContext context) {

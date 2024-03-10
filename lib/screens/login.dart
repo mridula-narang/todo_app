@@ -42,9 +42,9 @@ class _LoginState extends State<Login> {
                   fontSize: 30.0,
                 ),),
                 SizedBox(height: 30,),
-                genTextFormFeild(_conUserId, 'User Name', Icons.person),
+                genTextFormFeild(_conUserId, 'User Name', Icons.person,TextInputType.name),
                 SizedBox(height: 10,),
-                genTextFormFeild(_conPassword, 'Password', Icons.lock,isObscureText: true,),
+                genTextFormFeild(_conPassword, 'Password', Icons.lock,isObscureText: true,TextInputType.visiblePassword),
                 SizedBox(height: 10,),
                 Container(
                   width: double.infinity,
